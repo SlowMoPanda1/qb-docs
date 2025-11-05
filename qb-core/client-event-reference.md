@@ -6,7 +6,7 @@ description: Learn about and how to use common core client events!
 
 ### QBCore:Client:OnPlayerLoaded
 
-* Handles the player loading in after character selection
+-   Handles the player loading in after character selection
 
 {% hint style="success" %}
 This event can be used as an event handler to trigger code because it signifies the player has successfully loaded into the server!
@@ -20,7 +20,7 @@ end)
 
 ### QBCore:Client:OnPlayerUnload
 
-* Handles the player login out to character selection
+-   Handles the player login out to character selection
 
 {% hint style="success" %}
 This event can be used as an event handler to trigger code because it signifies the player has successfully unloaded or logged out of the server!
@@ -48,7 +48,7 @@ end)
 
 |   Arguments   |  Type  | Required | Default |
 | :-----------: | :----: | :------: | :-----: |
-| vehicle model | string |    yes   |   none  |
+| vehicle model | string |   yes    |  none   |
 
 {% hint style="info" %}
 Client example
@@ -80,7 +80,7 @@ end)
 
 | Arguments | Type | Required | Default |
 | :-------: | :--: | :------: | :-----: |
-|    none   | none |    no    |   none  |
+|   none    | none |    no    |  none   |
 
 {% hint style="info" %}
 Client example
@@ -138,11 +138,11 @@ end)
 
 ### QBCore:Notify
 
-| Arguments |       Type      | Required |    Default    |
+| Arguments |      Type       | Required |    Default    |
 | :-------: | :-------------: | :------: | :-----------: |
-|  message  | string \| table |    yes   | 'Placeholder' |
-|    type   |      string     |    yes   |   'primary'   |
-|   length  |      number     |    yes   |      5000     |
+|  message  | string \| table |   yes    | 'Placeholder' |
+|   type    |     string      |   yes    |   'primary'   |
+|  length   |     number      |   yes    |     5000      |
 
 {% hint style="info" %}
 Client example
@@ -212,7 +212,7 @@ end)
 
 | Arguments |  Type  | Required | Default |
 | :-------: | :----: | :------: | :-----: |
-| item name | string |    yes   |   none  |
+| item name | string |   yes    |  none   |
 
 {% hint style="info" %}
 Client example (must have the item in your inventory)
@@ -250,8 +250,8 @@ end)
 
 | Arguments |  Type  | Required | Default |
 | :-------: | :----: | :------: | :-----: |
-| player id | number |    yes   |   none  |
-|  message  | string |    yes   |   none  |
+| player id | number |   yes    |  none   |
+|  message  | string |   yes    |  none   |
 
 {% hint style="info" %}
 Client example
@@ -291,13 +291,13 @@ This only updates shared data for the client, it does not update the server. Als
 
 Arguments:
 
-1. tableName: The Shared field it should be updated
+1. tableName: The Shared field that should be updated
 2. key: Key of the field to update
 3. value: New value of the field to update
 
 ```lua
     RegisterCommand('addjob', function()
-        TriggerClientEvent('QBCore:Client:OnSharedUpdate', -1, 'Jobs', 'sheriff'. {
+        TriggerClientEvent('QBCore:Client:OnSharedUpdate', -1, 'Jobs', 'sheriff', {
             label = 'Sheriff\'s',
             type = 'leo',
             defaultDuty = true,
@@ -330,7 +330,7 @@ Arguments:
 
 ```lua
     RegisterCommand('addjob', function()
-        TriggerClientEvent('QBCore:Client:OnSharedUpdate', -1, 'Jobs', {
+        TriggerClientEvent('QBCore:Client:OnSharedUpdateMultiple', -1, 'Jobs', {
             sheriff = {
                 label = 'Sheriff\'s',
                 type = 'leo',
